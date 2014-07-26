@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $USER != 'root' ]
 then
-	echo 'É PRECISO EXECUTAR COMO ROOT, (sudo ./script.sh)'
+	echo 'É PRECISO EXECUTAR COMO ROOT, (sudo ./ambiente-zf2/install.sh)'
 	exit
 fi
 
@@ -9,7 +9,7 @@ echo 'INÍCIO DA INSTALAÇÃO...'
 echo 'UPDATE...'
 apt-get update
 echo 'ATUALIZADO, INSTALAR APACHE, PHP5.4, MYSQL'
-apt-get install php5 php5-cli php5-curl php5-mysql apache2 mysql-server curl
+apt-get install php5 php5-cli php5-curl php5-mysql apache2 mysql-server curl -y
 echo 'INSTALADO O LAMP!'
 
 echo 'INSTALANDO O COMPOSER...'

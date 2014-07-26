@@ -15,6 +15,7 @@ echo 'INSTALADO O LAMP!'
 echo 'INSTALANDO O COMPOSER...'
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+rm composer.phar
 
 read -p 'Informe a pasta para salvar os projetos: ' -e -i $HOME'/projetos' PROJETOS_PATH
 
@@ -23,6 +24,6 @@ then
 	mkdir PROJETOS_PATH
 fi
 
-/bin/bash projeto.sh $PROJETOS_PATH
+source $(dirname $0)/projeto.sh $PROJETOS_PATH
 
 

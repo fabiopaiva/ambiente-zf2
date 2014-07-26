@@ -13,6 +13,8 @@ fi
 
 DIRPROJETO="$PROJETOS_PATH/$PROJETO"
 
+cp /usr/local/bin/composer composer.phar
+
 php composer.phar create-project -sdev --repository-url="https://packages.zendframework.com" zendframework/skeleton-application $DIRPROJETO
 
 echo ''

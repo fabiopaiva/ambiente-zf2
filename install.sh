@@ -8,7 +8,7 @@ fi
 echo 'INÍCIO DA INSTALAÇÃO...'
 echo 'UPDATE...'
 apt-get install python-software-properties -y
-add-apt-repository ppa:ondrej/php5
+add-apt-repository ppa:ondrej/php5 -y
 apt-get update
 echo 'ATUALIZADO, INSTALAR APACHE, PHP5.4, MYSQL'
 apt-get install php5 php5-cli php5-curl php5-mysql apache2 mysql-server curl -y

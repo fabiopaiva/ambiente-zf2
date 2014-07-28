@@ -22,7 +22,7 @@ read -p 'Informe a pasta para salvar os projetos zf2: ' -e -i $HOME'/projetos' P
 
 if [ -d $PROJETOS_PATH ]
 then
-	mkdir PROJETOS_PATH
+	mkdir $PROJETOS_PATH
 fi
 
 source $(dirname $0)/projeto.sh $PROJETOS_PATH

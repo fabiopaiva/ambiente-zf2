@@ -21,10 +21,7 @@ mv composer.phar /usr/local/bin/composer
 echo ''
 read -p 'Informe a pasta para salvar os projetos zf2: ' -e -i $HOME'/projetos' PROJETOS_PATH
 
-if [ -d $PROJETOS_PATH ]
-then
-	mkdir $PROJETOS_PATH
-fi
+mkdir $PROJETOS_PATH -p
 
 source $(dirname $0)/projeto.sh $PROJETOS_PATH
 

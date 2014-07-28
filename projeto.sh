@@ -13,6 +13,8 @@ fi
 
 DIRPROJETO="$PROJETOS_PATH/$PROJETO"
 
+composer self-update
+
 cp /usr/local/bin/composer composer.phar
 
 php composer.phar create-project -sdev --repository-url="https://packages.zendframework.com" zendframework/skeleton-application $DIRPROJETO
@@ -32,13 +34,11 @@ HOSTPROJETO="<VirtualHost *:80>\n
 \t</Directory>\n
 </VirtualHost>
 "
-cd /etc/apache2/sites-available
-echo -e $HOSTPROJETO > $PROJETO
+echo -e $HOSTPROJETO > "/etc/apache2/sites-available/${PROJETO}.conf"
 a2ensite $PROJETO
-a2enmod rewrite
 service apache2 restart
 
-read USUARIO -p 'DIGITE O NOME DE USUÁRIO DONO DO PROJETO: ' -e -i 'root:www-data'
+read -p 'DIGITE O NOME DE USUÁRIO DONO DO PROJETO: ' -e -i 'root:www-data' USUARIO
 if [ -z $USUARIO ]
 then
 	echo 'NÃO FOI DIGITADO O USUÁRIO, NÃO FOI POSSÍVEL MUDAR O DONO DA PASTA'

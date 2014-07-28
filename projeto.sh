@@ -38,12 +38,4 @@ echo -e $HOSTPROJETO > "/etc/apache2/sites-available/${PROJETO}"
 a2ensite $PROJETO
 service apache2 restart
 
-read -p 'DIGITE O NOME DE USUÁRIO DONO DO PROJETO: ' -e -i 'www-data' USUARIO
-if [ -z $USUARIO ]
-then
-	echo 'NÃO FOI DIGITADO O USUÁRIO, NÃO FOI POSSÍVEL MUDAR O DONO DA PASTA'
-	exit
-fi
-chown $USUARIO $DIRPROJETOS/* -R
-
 echo "CONCLUÍDO!\n A PASTA DO PROJETO ESTÁ EM $DIRPROJETO\n ACESSO http://local.$PROJETO"

@@ -30,7 +30,8 @@ HOSTPROJETO="<VirtualHost *:80>\n
 \t\tDirectoryIndex index.php\n
 \t\tAllowOverride FileInfo\n
 \t\tOrder allow,deny\n
-\t\tallow from all\n
+\t\tAllow from all\n
+\t\tRequire all granted\n
 \t</Directory>\n
 </VirtualHost>
 "

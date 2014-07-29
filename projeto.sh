@@ -34,7 +34,7 @@ HOSTPROJETO="<VirtualHost *:80>\n
 \t</Directory>\n
 </VirtualHost>
 "
-echo -e $HOSTPROJETO > "/etc/apache2/sites-available/${PROJETO}"
+echo -e $HOSTPROJETO > "/etc/apache2/sites-available/${PROJETO}.conf"
 a2ensite $PROJETO
 service apache2 restart
 
